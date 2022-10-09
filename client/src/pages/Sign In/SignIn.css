@@ -1,0 +1,12 @@
+.register__form__button:disabled {
+    background-color: hsl(29, 98%, 50%);
+    color: hsl(0, 0%, 70%);
+    cursor: not-allowed;
+}
+
+.error {
+    color: red;
+    font-weight: 400;
+    margin-bottom: .5em;
+    margin-top: -.3em;
+}

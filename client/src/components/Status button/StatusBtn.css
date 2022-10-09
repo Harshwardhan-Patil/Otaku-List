@@ -1,0 +1,22 @@
+.status-btn {
+    padding: .4em 1em;
+    cursor: pointer;
+    transition: background-color 300ms ease-out,
+        color 300ms ease-in;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.status-btn:hover {
+    background-color: hsl(210, 23%, 20%);
+}
+
+@media only screen and (max-width:550px) {
+    .status-btn {
+        padding: .4em .3em;
+    }
+
+    .status-btn:hover {
+        background-color: transparent;
+    }
+}

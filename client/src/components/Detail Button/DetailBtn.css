@@ -1,0 +1,26 @@
+.detail-btn {
+    color: #fff;
+    font-size: 1rem;
+    padding: .6em .8em;
+    border-radius: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background-color: transparent;
+    font-weight: 700;
+    transition: background-color 250ms ease-in,
+        border 250ms ease-in;
+    text-decoration: none;
+}
+
+
+.detail-btn:hover {
+    background-color: #fd9330;
+    border-color: #fd9330;
+}
+
+@media only screen and (max-width:550px) {
+    .detail-btn {
+        font-size: .7rem;
+    }
+}

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    z-index: 3;
+    padding: .8em 0;
+    transition: background-color 250ms ease-in;
+}
+
+.center-heading {
+    justify-content: center;
+}
+
+.navbar__background {
+    box-shadow: 0px 2px 8px #4444;
+    background-color: hsl(208, 23%, 15%);
+}
+
+.navbar__page {
+    position: fixed;
+}
+
+.left h1 {
+    text-transform: uppercase;
+    transition: all 250ms ease-in;
+}
+
+
+.navbar h1 {
+    color: hsl(0, 0%, 85%);
+    font-family: 'Noto Serif', serif;
+}
+
+.right {
+    display: flex;
+    gap: 1.3em;
+}
+
+.pages {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    position: relative;
+    z-index: 5;
+}
+
+
+.pages::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 1%;
+    height: 2px;
+    content: '.';
+    color: transparent;
+    background: #DDDDDD;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+    transition: all 250ms ease-in;
+}
+
+
+.pages:hover:after {
+    opacity: 1;
+    visibility: visible;
+    width: 110%;
+}
+
+
+.pages h1 {
+    font-size: 1rem;
+    transition: color 250ms ease-in;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pages svg {
+    fill: none;
+    stroke: #fff;
+    transition: all 250ms ease-in;
+}
+
+@media only screen and (max-width: 550px) {
+    .navbar {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .left h1 {
+        margin-left: .4em;
+    }
+}

@@ -1,0 +1,102 @@
+.detail {
+    padding: 1.3em 4em;
+}
+
+
+.detail__container,
+.detail__header {
+    display: flex;
+}
+
+.detail__header {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.detail__header h1 {
+    font-size: 2.2rem;
+}
+
+.detail__header__anime-type {
+    font-weight: bold;
+    margin-left: .5em;
+    color: #9e9e9e;
+}
+
+.detail__container {
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.detail__synopsis p {
+    line-height: 1.4;
+}
+
+.detail__poster {
+    flex: 0.4;
+}
+
+.detail__poster img {
+    width: 290px;
+}
+
+.detail__anime__info {
+    flex: 1;
+    padding: .3em .4em;
+}
+
+.detail__extra {
+    margin-top: .6em;
+}
+
+.detail__trailer {
+    margin-top: 3em;
+}
+
+.detail__trailer h1 {
+    text-transform: uppercase;
+    margin-bottom: .8em;
+}
+
+.detail__trailer object {
+    width: 100%;
+    height: 85vh;
+}
+
+@media only screen and (max-width:550px) {
+    .detail {
+        padding: 1.3em 2em;
+    }
+
+    .detail__header {
+        flex-direction: column;
+    }
+
+    .detail__header h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        width: 100vw;
+    }
+
+    .detail__container {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+
+    }
+
+
+    .detail__main__header {
+        margin-bottom: 2em;
+    }
+
+    .detail__trailer {
+        margin-bottom: 4em;
+    }
+
+    .detail__trailer object {
+        width: 100%;
+        height: 30vh;
+    }
+}

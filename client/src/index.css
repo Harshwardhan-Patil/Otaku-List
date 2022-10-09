@@ -1,0 +1,43 @@
+:root {
+  --DarkBlue: hsl(208, 23%, 20%);
+  /*(Dark Mode Elements)*/
+  --VDarkBlue: #181f26;
+  /*(Dark Mode Background)*/
+  /* btn and links color */
+  --Orange: #fd9330;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: var(--VDarkBlue);
+  color: #fff;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: var(--VDarkBlue);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #dddd;
+}

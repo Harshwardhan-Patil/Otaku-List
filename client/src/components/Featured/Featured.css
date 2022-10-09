@@ -1,0 +1,39 @@
+.featured {
+    width: 100%;
+    height: 80vh;
+    background-size: cover !important;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+}
+
+.poster {
+    width: 400px;
+    margin: 0 1em;
+}
+
+.poster h1 {
+    margin-bottom: .4em;
+}
+
+.poster p {
+    margin-bottom: 1.4em;
+}
+
+@media only screen and (max-width:550px) {
+    .featured {
+        height: 50vh;
+    }
+
+    .poster {
+        width: 200px;
+    }
+
+    .poster h1 {
+        font-size: 1.3rem;
+    }
+
+    .poster p {
+        font-size: .8rem;
+    }
+}

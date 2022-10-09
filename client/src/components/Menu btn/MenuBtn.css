@@ -1,0 +1,35 @@
+.m-pages {
+    transition: all 250ms ease-in;
+}
+
+.m-pages h1 {
+    font-size: .8rem;
+    font-weight: lighter;
+    color: hsl(0, 0%, 70%);
+}
+
+.m-pages svg {
+    fill: none;
+    stroke: #fff;
+    transition: all 250ms ease-in;
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+    width: 100%;
+    background-color: hsl(208, 23%, 20%);
+    height: fit-content;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5em 0em;
+    text-align: center;
+    z-index: 10;
+}
+
+.m-pages:nth-of-type(4) {
+    align-self: center;
+}

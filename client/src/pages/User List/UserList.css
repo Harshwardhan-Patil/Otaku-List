@@ -1,0 +1,72 @@
+.user-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list__poster {
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+}
+
+.user-list__poster__container {
+    align-self: flex-end;
+    display: flex;
+    gap: 1em;
+}
+
+.user-list__main {
+    margin-top: 2em;
+}
+
+.user-list__row__poster__detail {
+    gap: 1em;
+    justify-content: center !important;
+}
+
+.go_to_login_page {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.go_to_login_page a {
+    text-decoration: none;
+    color: #fd9330;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.userList__anime__title {
+    width: 153px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    padding: 10px 0;
+    left: 50%;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    background-color: hsl(210, 23%, 16%);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.userList__anime__title h1 {
+    font-size: .8rem;
+    margin-left: .3em;
+}
+
+@media only screen and (max-width:550px) {
+    .user-list__poster__container {
+        align-self: flex-end;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .user-list__poster__container h2 {
+        font-size: 1rem;
+    }
+}
