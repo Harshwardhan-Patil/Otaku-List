@@ -48,7 +48,7 @@
     left: 50%;
     box-sizing: border-box;
     transform: translateX(-50%);
-    background-color: hsl(210, 23%, 16%);
+    background: linear-gradient(0deg, rgba(31, 41, 50, .9) 30%, rgba(31, 41, 50, .9) 52%);
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -68,5 +68,9 @@
 
     .user-list__poster__container h2 {
         font-size: 1rem;
+    }
+
+    .userList__anime__title {
+        width: 154px;
     }
 }

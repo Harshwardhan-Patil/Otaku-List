@@ -47,13 +47,13 @@
     opacity: 1;
     position: absolute;
     top: 70%;
-    bottom: 0;
-    left: 50%;
-    width: 153px;
+    bottom: 0px;
+    left: 6px;
+    right: 0;
+    width: 154px;
     box-sizing: border-box;
-    transform: translateX(-50%);
-    background-color: hsl(210, 23%, 16%);
-    filter: drop-shadow(0px -11px 13px #000);
+    background: linear-gradient(0deg, rgba(31, 41, 50, .9) 30%, rgba(31, 41, 50, .9) 52%);
+    background-color: transparent;
 }
 
 

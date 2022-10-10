@@ -71,4 +71,8 @@
         border-radius: 12px;
         cursor: pointer;
     }
+
+    .row__poster__main {
+        position: relative;
+    }
 }

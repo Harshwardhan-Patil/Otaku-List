@@ -58,15 +58,18 @@ function Row({ title, url, sort, isCharacter }) {
               key={anime.mal_id}
               className="row__poster__box"
             >
-              <img
-                className="row__poster"
-                src={
-                  anime?.images.webp.image_url || anime?.images.jpg.image_url
-                }
-                alt={anime?.title}
-                loading="lazy"
-              />
-              <RowPosterDetail anime={anime} />
+              <div className="row__poster__main">
+                <img
+                  className="row__poster"
+                  src={
+                    anime?.images.webp.image_url || anime?.images.jpg.image_url
+                  }
+                  alt={anime?.title}
+                  loading="lazy"
+                />
+
+                <RowPosterDetail anime={anime} />
+              </div>
             </Link>
           );
         })}

@@ -61,6 +61,7 @@
     }
 
     .anime_poster_box {
+        justify-self: center;
         width: fit-content;
     }
 }

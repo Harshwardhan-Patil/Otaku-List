@@ -23,8 +23,6 @@ const AnimeSearch = () => {
   const observer = useRef();
   const lastAnimeOnPage = useCallback(
     (node) => {
-      if (loading || searchedLoading) return;
-
       if (observer.current) observer.current.disconnect();
 
       observer.current = new IntersectionObserver((entries) => {
@@ -36,7 +34,7 @@ const AnimeSearch = () => {
       });
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore, searchedHasMore, isQuerying, searchedLoading]
+    [hasMore, searchedHasMore, isQuerying]
   );
 
   function queryAndPageNumber(e) {
