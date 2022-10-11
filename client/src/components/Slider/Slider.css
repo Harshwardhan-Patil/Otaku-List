@@ -1,3 +1,7 @@
+.slider {
+    margin-bottom: 3.5em;
+}
+
 .slider__row {
     display: flex;
     overflow-x: scroll;

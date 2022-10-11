@@ -3,34 +3,29 @@ import "./Row.css";
 import axios from "../../api/axios";
 import RowPosterDetail from "../Row Poster Details/RowPosterDetail";
 import { Link } from "react-router-dom";
+import { useCallback } from "react";
 
-function Row({ title, url, sort, isCharacter }) {
+function Row({ title, url, sort }) {
   const [animes, setAnimes] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const rowRef = useRef(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
 
-  const rowIntersectionObserver = (entries) => {
-    const [entry] = entries;
-    setIsIntersecting(entry.isIntersecting);
-  };
+  const handleRowRendering = useCallback((node) => {
+    if (rowRef.current) rowRef.current.disconnect();
 
-  useEffect(() => {
     const rowOption = {
       root: null,
-      rootMargin: "100px 0px 0px 0px",
+      rootMargin: "10px 0px 0px 0px",
       threshold: 1.0,
     };
-    const rowObserver = new IntersectionObserver(
-      rowIntersectionObserver,
-      rowOption
-    );
-    if (rowRef.current) rowObserver.observe(rowRef.current);
-
-    return () => {
-      if (rowRef.current) rowObserver.unobserve(rowRef.current);
-    };
+    rowRef.current = new IntersectionObserver((entries) => {
+      const [entry] = entries;
+      setIsIntersecting(entry.isIntersecting);
+    }, rowOption);
+    if (node) rowRef.current.observe(node);
   }, []);
+
   useEffect(() => {
     async function getData() {
       try {
@@ -41,14 +36,14 @@ function Row({ title, url, sort, isCharacter }) {
         setIsLoaded(true);
         return response.data.data;
       } catch (error) {
-        console.log("error:" + error);
+        console.log("Row Component error:" + error);
       }
     }
     !isLoaded && isIntersecting && getData();
   }, [url, sort, isIntersecting, isLoaded]);
 
   return (
-    <div className="row" ref={rowRef}>
+    <div className="row" ref={handleRowRendering}>
       <h2 className="row__title">{title}</h2>
       <div className="row__posters">
         {animes.map((anime) => {

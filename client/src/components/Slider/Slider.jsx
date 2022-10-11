@@ -20,9 +20,8 @@ function Slider({ id }) {
         {characters.map(
           (character) =>
             character.character.images.webp.image_url && (
-              <div className="slider__image">
+              <div className="slider__image" key={character.mal_id}>
                 <img
-                  key={character.mal_id}
                   src={
                     character.character.images.webp.image_url ||
                     character.character.images.jpg.image_url

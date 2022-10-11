@@ -59,6 +59,7 @@
 }
 
 @media only screen and (max-width:550px) {
+
     .row__poster__box:hover .row__poster {
         transform: scale(1);
     }
@@ -74,5 +75,9 @@
 
     .row__poster__main {
         position: relative;
+    }
+
+    .row__title {
+        font-size: 1.2rem;
     }
 }

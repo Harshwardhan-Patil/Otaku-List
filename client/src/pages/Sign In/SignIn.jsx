@@ -15,7 +15,6 @@ function SignIn() {
   async function handleClick(e) {
     e.preventDefault();
     const isLoggedIn = await login(dispatch, { username, password });
-    console.log(isLoggedIn);
     if (isLoggedIn) {
       navigate("/");
     } else {

@@ -18,7 +18,7 @@ function Featured({ url }) {
   }, [url]);
 
   const background = {
-    background: `linear-gradient(0deg, rgba(24, 31, 38, 1) 2%, rgba(255, 255, 255, 0.1) 30%),linear-gradient(90deg, rgba(24,31,38,1) 6%, rgba(53,60,66,.8) 19%, rgba(255,255,255,.1) 61%),url(${animePoster.img}) no-repeat ${animePoster.backgroundPosition}`,
+    background: `linear-gradient(0deg, rgba(24, 31, 38, 1) 2%, rgba(255, 255, 255, 0.1) 90%),linear-gradient(90deg, rgba(24,31,38,1) 6%, rgba(53,60,66,.8) 20%, rgba(255,255,255,.1) 61%),url(${animePoster.img}) no-repeat ${animePoster.backgroundPosition}`,
   };
 
   const override = {

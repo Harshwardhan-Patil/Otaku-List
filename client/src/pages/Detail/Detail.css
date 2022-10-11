@@ -64,6 +64,13 @@
     height: 85vh;
 }
 
+@media only screen and (max-width:950px) {
+    .detail__trailer object {
+        width: 100%;
+        height: 40vh;
+    }
+}
+
 @media only screen and (max-width:550px) {
     .detail {
         padding: 1.3em 2em;

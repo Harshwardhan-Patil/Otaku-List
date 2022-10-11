@@ -52,7 +52,7 @@ function MenuBtn({ page }) {
         {user ? (
           <Setting />
         ) : (
-          <Link to={"/login"} className="pages">
+          <Link to={"/login"} className="m-pages">
             <LoginIcon />
             <h1>Sign In</h1>
           </Link>
