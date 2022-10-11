@@ -7,7 +7,7 @@ dotenv.config();
 
 async function register(req, res) {
   const { username, email, password } = req.body;
-
+  console.log(req.body);
   const user = new User({
     username,
     email,
@@ -37,8 +37,6 @@ async function login(req, res) {
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
-    !user && res.status(404).json("User name does not exist");
-
     const hashedPassword = CryptoJs.AES.decrypt(
       user.password,
       process.env.CRYPTO_JS_SECRET
@@ -55,7 +53,7 @@ async function login(req, res) {
       ? res.status(200).json({ ...others, token: accessToken })
       : res.status(401).json("You password is incorrect");
   } catch (error) {
-    res.status(500).json(error);
+    res.status(404).json("User name does not exist");
   }
 }
 

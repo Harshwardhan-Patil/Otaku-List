@@ -20,7 +20,6 @@ export const login = async (dispatch, user) => {
 };
 
 export const logout = async (dispatch, user) => {
-  console.log(user);
   dispatch(loginStart());
   try {
     const response = await fetch(`/auth/logout/${user.id}`, {

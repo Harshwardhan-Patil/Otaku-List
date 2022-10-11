@@ -12,10 +12,15 @@ function SignIn() {
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
 
-  function handleClick(e) {
+  async function handleClick(e) {
     e.preventDefault();
-    login(dispatch, { username, password });
-    !error && navigate("/");
+    const isLoggedIn = await login(dispatch, { username, password });
+    console.log(isLoggedIn);
+    if (isLoggedIn) {
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
   }
 
   return (

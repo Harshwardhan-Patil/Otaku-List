@@ -1,17 +1,21 @@
-import React from "react";
 import SettingsIcon from "@mui/icons-material/Settings";
 import "./Setting.css";
 import "../NavBar/NavBar.css";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PersonIcon from "@mui/icons-material/Person";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/apiCalls";
+import { Link } from "react-router-dom";
 
 function Setting() {
   const dispatch = useDispatch();
+
   const user = useSelector((state) => state.user.currentUser);
+
   async function handleLogOut() {
     logout(dispatch, user);
   }
+
   return (
     <>
       <div className="setting pages">
@@ -22,6 +26,10 @@ function Setting() {
             <LogoutIcon />
             <h2>Logout</h2>
           </div>
+          <Link to={`/about`} className="options">
+            <PersonIcon />
+            <h2>About</h2>
+          </Link>
         </div>
       </div>
     </>

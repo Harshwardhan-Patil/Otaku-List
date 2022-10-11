@@ -11,6 +11,7 @@ const Detail = lazy(() => import("./pages/Detail/Detail"));
 const PageNotFound = lazy(() => import("./pages/Page Not Found/PageNotFound"));
 const Register = lazy(() => import("./pages/Register/Register"));
 const SignIn = lazy(() => import("./pages/Sign In/SignIn"));
+const About = lazy(() => import("./pages/About/About"));
 
 function App() {
   const user = useSelector((state) => state.user.currentUser);
@@ -48,6 +49,7 @@ function App() {
           path="/yourList/planToWatch"
           element={<UserList title="Plan To Watch" />}
         />
+        <Route path="/about" element={<About />} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/login"

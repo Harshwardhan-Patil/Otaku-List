@@ -89,6 +89,14 @@
     color: var(--Orange);
 }
 
+.error {
+    color: red;
+    font-weight: 400;
+    margin-bottom: .5em;
+    margin-top: -.3em;
+    font-size: 1rem;
+}
+
 @media only screen and (max-width:550px) {
     .register__form {
         width: 250px;

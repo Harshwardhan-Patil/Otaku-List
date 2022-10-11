@@ -3,27 +3,45 @@
 }
 
 .setting:hover .setting__drop-down-list {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(90px);
 }
 
 
 
 
 .setting__drop-down-list {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
-    bottom: -115%;
+    bottom: 50%;
     background-color: hsl(208, 23%, 15%);
     width: fit-content;
     padding: .4em 1em;
     border-radius: 4px;
-    animation: drop-down 300ms cubic-bezier(0.42, 0, 0.67, 1.06) forwards;
+    transform: translateY(80px);
+    transition: all 200ms ease-in;
 }
 
 .options {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: .4em;
+    transition: color 100ms ease-in;
+    position: relative;
+}
+
+
+
+.options:hover {
+    color: var(--Orange);
+}
+
+.options:hover svg {
+    fill: var(--Orange);
+    stroke: var(--Orange);
 }
 
 .options h2 {
@@ -33,53 +51,35 @@
 }
 
 
-@keyframes drop-down {
-    0% {
-        transform: translateY(-15px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    75% {
-        transform: translateY(-5px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-
-}
-
 @media only screen and (max-width:550px) {
     .setting {
+        user-select: none;
         display: flex;
         flex-direction: column;
     }
 
     .setting__drop-down-list {
-        display: none;
-        position: absolute;
-        top: -40px;
-        bottom: auto;
-        right: 4px;
-        background-color: hsl(208, 23%, 15%);
-        width: fit-content;
-        padding: .4em 1em;
-        border-radius: 4px;
-        animation: drop-down 300ms cubic-bezier(0.42, 0, 0.67, 1.06) forwards;
+        height: 100%;
+        padding: .5em 1em;
+        transform: translate(0px, -30px);
+    }
+
+    .options {
+        margin-bottom: .6em;
     }
 
     .options svg {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .options h2 {
-        font-size: .8rem;
+        font-size: 1rem;
     }
 
-    .setting:checked .setting__drop-down-list {
-        display: block;
+
+    .setting:hover .setting__drop-down-list {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0px, -40px);
     }
 }

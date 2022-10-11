@@ -1,26 +1,39 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import isEmail from "validator/lib/isEmail";
 import "./Register.css";
 
 function Register() {
   const username = useRef();
   const email = useRef();
   const password = useRef();
+  const registerBtn = useRef();
+  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   async function handleClick(e) {
     e.preventDefault();
-    try {
-      await axios.post("/auth/register", {
-        username: username.current.value,
-        email: email.current.value,
-        password: password.current.value,
-      });
-      console.log("dkd");
-      navigate("/login");
-    } catch (error) {
-      console.error(error);
+    if (!isEmail(email.current.value)) {
+      setError(true);
+      setErrorMessage("Email is Not Valid");
+      email.current.style.outline = "2px solid red";
+    } else {
+      setError(false);
+      email.current.style.outline = "1px solid black";
+      try {
+        await axios.post("/auth/register", {
+          username: username.current.value,
+          email: email.current.value,
+          password: password.current.value,
+        });
+        navigate("/login");
+      } catch (error) {
+        setErrorMessage("Username or Email already exist");
+        setError(true);
+        console.error(error);
+      }
     }
   }
 
@@ -58,9 +71,14 @@ function Register() {
             </div>
           </div>
 
-          <button className="register__form__button" type="submit">
+          <button
+            ref={registerBtn}
+            className="register__form__button"
+            type="submit"
+          >
             Register
           </button>
+          {error && <h3 className="error">{errorMessage}</h3>}
           <div className="register__query">
             <h2>
               Already Have an Account?

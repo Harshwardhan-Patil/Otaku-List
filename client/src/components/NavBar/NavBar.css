@@ -95,4 +95,8 @@
     .left h1 {
         margin-left: .4em;
     }
+
+    .pages:hover:after {
+        opacity: 0;
+    }
 }
