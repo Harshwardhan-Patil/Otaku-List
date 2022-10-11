@@ -7,7 +7,6 @@ dotenv.config();
 
 async function register(req, res) {
   const { username, email, password } = req.body;
-  console.log(req.body);
   const user = new User({
     username,
     email,
