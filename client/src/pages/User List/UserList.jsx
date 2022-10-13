@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -12,6 +11,7 @@ import "../Anime Search/AnimeSearch.css";
 import "./UserList.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { axiosAPIInstance } from "../../config";
 
 const UserList = ({ title }) => {
   const { currentUser } = useSelector((state) => state.user);
@@ -31,7 +31,7 @@ const UserList = ({ title }) => {
   async function fetchData(url) {
     setLoading(true);
     if (currentUser) {
-      const response = await axios.get(url, {
+      const response = await axiosAPIInstance.get(url, {
         headers: {
           token: `Bearer ${currentUser.token}`,
         },
@@ -116,38 +116,52 @@ const UserList = ({ title }) => {
           ) : (
             <div className="user-list__detail">
               <div className="row__poster__container">
-                {animes?.map((anime) => {
-                  return (
-                    <Link
-                      to={`/anime/${anime.animeMalId}`}
-                      key={anime?.animeMalId}
-                      className="row__poster__box anime_poster_box"
-                    >
-                      <img
-                        className="row__poster"
-                        src={anime?.animePoster}
-                        alt={anime?.animeName}
-                        loading="lazy"
-                      />
-                      {!isMobile ? (
-                        <div className="row__poster__details user-list__row__poster__detail">
-                          <h1 className="row__poster__details__title">
-                            {anime?.animeName}
-                          </h1>
-
-                          <DetailBtn
-                            key={anime?.animeMalId}
-                            id={anime.animeMalId}
-                          />
-                        </div>
-                      ) : (
-                        <div className="userList__anime__title">
-                          <h1 className="">{anime?.animeName}</h1>
-                        </div>
-                      )}
+                {animes.length === 0 ? (
+                  <div className="row__poster__container__empty-card-message">
+                    <img
+                      className="row__poster__container__add-to-card"
+                      src={`${process.env.PUBLIC_URL}/images/cardIsEmpty.svg`}
+                      alt=""
+                    />
+                    <h1>Nothing to show here,Your list is empty</h1>
+                    <Link to="/animeSearch" className="search-anime-btn">
+                      Search Anime
                     </Link>
-                  );
-                })}
+                  </div>
+                ) : (
+                  animes?.map((anime) => {
+                    return (
+                      <Link
+                        to={`/anime/${anime.animeMalId}`}
+                        key={anime?.animeMalId}
+                        className="row__poster__box anime_poster_box"
+                      >
+                        <img
+                          className="row__poster"
+                          src={anime?.animePoster}
+                          alt={anime?.animeName}
+                          loading="lazy"
+                        />
+                        {!isMobile ? (
+                          <div className="row__poster__details user-list__row__poster__detail">
+                            <h1 className="row__poster__details__title">
+                              {anime?.animeName}
+                            </h1>
+
+                            <DetailBtn
+                              key={anime?.animeMalId}
+                              id={anime.animeMalId}
+                            />
+                          </div>
+                        ) : (
+                          <div className="userList__anime__title">
+                            <h1 className="">{anime?.animeName}</h1>
+                          </div>
+                        )}
+                      </Link>
+                    );
+                  })
+                )}
               </div>
             </div>
           )}

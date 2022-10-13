@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import DetailBtn from "../Detail Button/DetailBtn";
 import BeatLoader from "react-spinners/BeatLoader";
 import "./Featured.css";
-import data from "../../api/data";
+import data from "../../requests/data";
 
-function Featured({ url }) {
+function Featured() {
   const [animePoster, setAnimePoster] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -15,7 +15,7 @@ function Featured({ url }) {
     }
 
     getRandomAnime();
-  }, [url]);
+  }, []);
 
   const background = {
     background: `linear-gradient(0deg, rgba(24, 31, 38, 1) 2%, rgba(255, 255, 255, 0.1) 90%),linear-gradient(90deg, rgba(24,31,38,1) 6%, rgba(53,60,66,.8) 20%, rgba(255,255,255,.1) 61%),url(${animePoster.img}) no-repeat ${animePoster.backgroundPosition}`,

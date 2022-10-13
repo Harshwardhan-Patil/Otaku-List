@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Row.css";
-import axios from "../../api/axios";
+import { axiosJikanApiInstance } from "../../config";
 import RowPosterDetail from "../Row Poster Details/RowPosterDetail";
 import { Link } from "react-router-dom";
 import { useCallback } from "react";
@@ -29,7 +29,7 @@ function Row({ title, url, sort }) {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await axios.get(url);
+        const response = await axiosJikanApiInstance.get(url);
         sort
           ? setAnimes(response.data.data.reverse())
           : setAnimes(response.data.data);

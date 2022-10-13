@@ -58,6 +58,39 @@
     margin-left: .3em;
 }
 
+.row__poster__container__empty-card-message {
+    margin-block: 2em;
+    text-align: center;
+    width: 210px;
+}
+
+.row__poster__container__empty-card-message h1 {
+    font-size: 1rem;
+    font-weight: 100;
+    margin: 1.2em 0;
+}
+
+.row__poster__container__add-to-card {
+    width: 200px;
+}
+
+.search-anime-btn {
+    width: 100%;
+    padding: .5em 1em;
+    background-color: hsl(29, 98%, 50%);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 200ms ease-in;
+}
+
+.search-anime-btn:hover {
+    background-color: var(--Orange);
+}
+
 @media only screen and (max-width:550px) {
     .user-list__poster__container {
         align-self: flex-end;
@@ -72,5 +105,21 @@
 
     .userList__anime__title {
         width: 154px;
+    }
+
+    .row__poster__container__empty-card-message {
+        width: 100vw;
+    }
+
+    .row__poster__container__empty-card-message h1 {
+        font-size: .8rem;
+    }
+
+    .row__poster__container__add-to-card {
+        width: 150px;
+    }
+
+    .search-anime-btn {
+        font-size: .8rem;
     }
 }

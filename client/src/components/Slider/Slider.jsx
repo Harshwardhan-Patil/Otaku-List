@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import axios from "../../api/axios";
+import { axiosJikanApiInstance } from "../../config";
 import "./Slider.css";
 
 function Slider({ id }) {
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
     (async function getCharacters() {
-      const response = await axios.get(
-        `https://api.jikan.moe/v4/anime/${id}/characters`
+      const response = await axiosJikanApiInstance.get(
+        `anime/${id}/characters`
       );
       setCharacters(response.data.data.slice(0, 30));
       return response;

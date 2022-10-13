@@ -15,11 +15,6 @@ function PageNotFound() {
   };
   return (
     <div className="page-not-found">
-      {/* <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoPlay=1&rel=0"
-        allow="autoPlay *"
-        title="yt"
-      ></iframe> */}
       <Youtube videoId="dQw4w9WgXcQ" opts={videoOptions} />
     </div>
   );

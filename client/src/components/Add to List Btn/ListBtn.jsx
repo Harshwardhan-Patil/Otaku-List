@@ -3,7 +3,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useSelector } from "react-redux";
 import "./ListBtn.css";
-import axios from "axios";
+import { axiosAPIInstance } from "../../config";
 import { useEffect } from "react";
 import UserNotPresent from "../User Not Present/UserNotPresent";
 
@@ -41,7 +41,7 @@ function ListBtn({ animeMalId, animeName, animePoster, animeStatus }) {
   useEffect(() => {
     async function addAnimeToList() {
       currentUser && setIsFetching(true);
-      const response = await axios.get(
+      const response = await axiosAPIInstance.get(
         `/animeList/getAnime/${currentUser._id}?animeMalId=${animeMalId}`,
         {
           headers: {
@@ -60,7 +60,7 @@ function ListBtn({ animeMalId, animeName, animePoster, animeStatus }) {
     if (currentUser) {
       setState(e.target.textContent);
 
-      await axios.put(
+      await axiosAPIInstance.put(
         `/animeList/add/${currentUser._id}`,
         {
           animeMalId,
@@ -81,7 +81,7 @@ function ListBtn({ animeMalId, animeName, animePoster, animeStatus }) {
   }
 
   async function handleRemoveClick() {
-    const response = await axios.put(
+    await axiosAPIInstance.put(
       `/animeList/remove/${currentUser._id}`,
       {
         animeMalId,

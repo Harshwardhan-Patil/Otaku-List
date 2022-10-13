@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import isEmail from "validator/lib/isEmail";
+import { axiosAPIInstance } from "../../config";
 import "./Register.css";
 
 function Register() {
@@ -23,7 +23,7 @@ function Register() {
       setError(false);
       email.current.style.outline = "1px solid black";
       try {
-        await axios.post("/auth/register", {
+        await axiosAPIInstance.post("/auth/register", {
           username: username.current.value,
           email: email.current.value,
           password: password.current.value,

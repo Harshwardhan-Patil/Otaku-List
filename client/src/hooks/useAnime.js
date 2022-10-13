@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { axiosJikanApiInstance } from "../config";
 
 function useAnime(pageNumber) {
   const [loading, setLoading] = useState(true);
@@ -11,8 +11,8 @@ function useAnime(pageNumber) {
       try {
         setLoading(true);
 
-        const response = await axios.get(
-          `https://api.jikan.moe/v4/anime?sfw=true&page=${pageNumber}`
+        const response = await axiosJikanApiInstance.get(
+          `https://api.jikan.moe/v4/top/anime?filter=bypopularity&page=${pageNumber}`
         );
         setAnimes((prevAnime) => [
           ...new Set([

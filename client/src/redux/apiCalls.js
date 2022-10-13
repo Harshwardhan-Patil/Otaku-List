@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axiosAPIInstance } from "../config";
 import {
   loginStart,
   loginSuccess,
@@ -6,12 +6,10 @@ import {
   logoutSuccess,
 } from "./userReducer";
 
-export const Axios = axios.create();
-
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
-    const response = await axios.post("/auth/login", user);
+    const response = await axiosAPIInstance.post("/auth/login", user);
     dispatch(loginSuccess(response.data));
     return response.data;
   } catch (error) {

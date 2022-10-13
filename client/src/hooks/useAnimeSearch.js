@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function useAnimeSearch(query, pageNumber) {
   const [loading, setLoading] = useState(true);

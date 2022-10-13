@@ -1,4 +1,3 @@
-import axios from "../../api/axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -7,6 +6,7 @@ import "./Detail.css";
 import Slider from "../../components/Slider/Slider";
 import ListBtn from "../../components/Add to List Btn/ListBtn";
 import NavBar from "../../components/NavBar/NavBar";
+import { axiosJikanApiInstance } from "../../config";
 
 function Detail() {
   const [anime, setAnimes] = useState([]);
@@ -15,7 +15,7 @@ function Detail() {
 
   useEffect(() => {
     async function getAnimeByName() {
-      const response = await axios.get(`anime/${id}/full`);
+      const response = await axiosJikanApiInstance.get(`anime/${id}/full`);
       setAnimes(response.data.data);
       setLoading(false);
       return response;
