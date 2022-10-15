@@ -10,6 +10,7 @@
   4. [how to deal with api in react](https://rapidapi.com/blog/how-to-use-an-api-with-react/?utm_source=google&utm_medium=cpc&utm_campaign=DSA&gclid=Cj0KCQjw0oyYBhDGARIsAMZEuMtTeWUY7rzCTu0by9Ih5Dng205Knkxyvvw8_Ega0Wa6nLNgvXtL2WgaAiGIEALw_wcB)
   5. [React infinite scrolling](https://www.youtube.com/watch?v=NZKUirTtxcg)
   6. [Redux](https://www.youtube.com/watch?v=DYtYyFOfpBY)
+  7. Learn basic of PWA(progressive web app)
 - On backend side
   1. [Api pagination](youtube.com/watch?v=ZX3qt0UWifc)
   2. [JWT Auth](https://www.youtube.com/watch?v=Yh5Lil03tpI)
